@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="820.0" style="-fx-background-color: #f4f6f9;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ContactController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <children>
+        <Label alignment="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="35.0" prefWidth="792.0" text="PhoneBook Manager">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+
+        <!-- Left Form Panel -->
+        <Pane layoutX="14.0" layoutY="56.0" prefHeight="350.0" prefWidth="215.0" style="-fx-background-color: #dfe4ea; -fx-background-radius: 8;">
+            <children>
+                <Label alignment="CENTER" layoutX="14.0" layoutY="10.0" prefHeight="28.0" prefWidth="187.0" text="Contact Details">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cmbType" layoutX="18.0" layoutY="45.0" prefHeight="30.0" prefWidth="179.0" promptText="Select Type" />
+                <TextField fx:id="txtNames" layoutX="18.0" layoutY="84.0" prefHeight="30.0" prefWidth="179.0" promptText="Enter Name" />
+                <TextField fx:id="txtAddress" layoutX="18.0" layoutY="123.0" prefHeight="30.0" prefWidth="179.0" promptText="Enter Address" />
+                <TextField fx:id="txtNumber" layoutX="18.0" layoutY="162.0" prefHeight="30.0" prefWidth="179.0" promptText="Enter Number" />
+                <TextField fx:id="txtExtra" layoutX="18.0" layoutY="201.0" prefHeight="30.0" prefWidth="179.0" promptText="Note / Company / Role" />
+
+
+                <Button layoutX="18.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="28.0" prefWidth="179.0" text="Add Contact" />
+                <Button layoutX="18.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="28.0" prefWidth="179.0" text="Update Selected" />
+                <Button layoutX="18.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleDel" prefHeight="28.0" prefWidth="179.0" text="Delete Selected" />
+            </children>
+        </Pane>
+
+
+        <!-- Main Contacts Table -->
+        <TableView fx:id="tblContacts" layoutX="242.0" layoutY="56.0" prefHeight="350.0" prefWidth="564.0">
+            <columns>
+                <TableColumn fx:id="colType" prefWidth="85.0" text="Type" />
+                <TableColumn fx:id="colNames" prefWidth="110.0" text="Name" />
+                <TableColumn fx:id="colAddress" prefWidth="125.0" text="Address" />
+                <TableColumn fx:id="colNumber" prefWidth="115.0" text="Number" />
+                <TableColumn fx:id="colExtra" prefWidth="128.0" text="Note / Organization" />
+            </columns>
+        </TableView>
+
+
+        <!-- Search Bar & Results Table -->
+        <TextField fx:id="txtSearch" layoutX="14.0" layoutY="420.0" prefHeight="32.0" prefWidth="215.0" promptText="Search name, type, number..." />
+        <Button layoutX="242.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="32.0" prefWidth="90.0" text="Search" />
+
+
+        <TableView fx:id="tblSContacts" layoutX="14.0" layoutY="464.0" prefHeight="140.0" prefWidth="792.0">
+            <columns>
+                <TableColumn fx:id="colSType" prefWidth="105.0" text="Type" />
+                <TableColumn fx:id="colSNames" prefWidth="155.0" text="Name" />
+                <TableColumn fx:id="colSAddress" prefWidth="185.0" text="Address" />
+                <TableColumn fx:id="colSNumber" prefWidth="155.0" text="Number" />
+                <TableColumn fx:id="colSExtra" prefWidth="190.0" text="Note / Organization" />
+            </columns>
+        </TableView>
+    </children>
+</Pane>
