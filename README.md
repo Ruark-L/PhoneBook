@@ -60,5 +60,3 @@ src
 - **IDE:** IntelliJ IDEA
 
 ---
-
-**PhoneBook code is located at ***'Code'*** branch**
